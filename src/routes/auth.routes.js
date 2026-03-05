@@ -1,7 +1,7 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const { findByUserName } = require("../data/login.memory");
+const { findByUserName } = require("../database/login.memory");
 
 const router = express.Router();
 
