@@ -44,8 +44,6 @@ router.get("/:id", controller.getById);
 *   post:
 *     summary: Cadastra um novo usuário
 *     tags: [Usuários]
-*     security:
-*       - bearerAuth: []
 *     requestBody:
 *       required: true
 *       content:
@@ -56,15 +54,18 @@ router.get("/:id", controller.getById);
 *               - Nome
 *               - Email
 *             properties:
-*               Nome:
+*               nome:
 *                 type: string
 *                 example: João
-*               Email:
+*               email:
 *                 type: string
 *                 example: joao@email.com
-*               Senha:
+*               senha:
 *                 type: string
 *                 example: 123
+*               nomeMae:
+*                 type: string
+*                 example: mae
 *     responses:
 *       201:
 *         description: Usuário criado com sucesso
