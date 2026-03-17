@@ -6,12 +6,12 @@ const db = require('../database/models');
 const router = express.Router();
 
 router.post("/login", async (req, res) => {
-  const { username, password } = req.body;
-  if (!username || !password)
+  const { email, password } = req.body;
+  if (!email || !password)
     return res.status(400).json({ message: "Informe username e password." });
 
   try {
-    const user = db.Usuario.findOne({ where: { email: username } });
+    const user = await db.Usuario.findOne({ where: { email: email } });
     if (!user)
       return res.status(401).json({ message: "Credenciais inválidas." });
 

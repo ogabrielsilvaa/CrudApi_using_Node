@@ -58,10 +58,13 @@ router.get("/:id", controller.getById);
 *             properties:
 *               Nome:
 *                 type: string
-*                 example: João Silva
+*                 example: João
 *               Email:
 *                 type: string
 *                 example: joao@email.com
+*               Senha:
+*                 type: string
+*                 example: 123
 *     responses:
 *       201:
 *         description: Usuário criado com sucesso
@@ -72,7 +75,7 @@ router.get("/:id", controller.getById);
 *       403:
 *         description: Proibido (Permissão insuficiente)
 */
-router.post("/", authenticateToken, authorizeRoles(["user", "admin"]), controller.create);
+router.post("/", controller.create);
 
 /**
 * @swagger
