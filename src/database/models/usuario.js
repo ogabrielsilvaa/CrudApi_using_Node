@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
       dataNascimento: { type: DataTypes.DATEONLY, allowNull: true},
       rg: { type: DataTypes.STRING(20), allowNull: true },
       cpf: { type: DataTypes.STRING(20), allowNull: true, unique: true },
-      nomeMae: { type: DataTypes.STRING(120), allowNull: false }
+      nomeMae: { type: DataTypes.STRING(120), allowNull: false },
+      role: { type: DataTypes.STRING(20), allowNull: false }
     },
     {
       tableName: "usuarios",
