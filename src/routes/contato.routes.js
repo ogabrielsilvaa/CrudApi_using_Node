@@ -1,5 +1,5 @@
 const express = require("express");
-const controller = require("../controller/userController");
+const controller = require("../controller/contatoController");
 const { authenticateToken } = require("../middlewares/authenticateToken");
 const { authorizeRoles } = require("../middlewares/authorizeRoles");
 
@@ -9,7 +9,7 @@ router.get("/", authenticateToken, authorizeRoles(["user", "admin"]), controller
 
 router.get("/:id", authenticateToken, authorizeRoles(["user", "admin"]), controller.getById);
 
-router.post("/", controller.create);
+router.post("/", authenticateToken, authorizeRoles(["user", "admin"]), controller.create);
 
 router.put("/:id", authenticateToken, authorizeRoles(["user", "admin"]), controller.update);
 
